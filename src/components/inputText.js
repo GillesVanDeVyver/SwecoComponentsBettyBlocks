@@ -32,7 +32,7 @@
       nameAttribute,
     } = options;
 
-    //const { Typeahead } = window.SwecoBettyBlocks.Typeahead;
+    const { Typeahead } = window.SwecoBettyBlocks.Typeahead;
     const { useText, env, getCustomModelAttribute } = B;
     const isDev = env === 'dev';
     const isNumberType = inputType === 'number';
@@ -172,11 +172,3 @@
     };
   },
 }))();
-
-/**
- * different regexes for different types:
- *
- * Email: [a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$
- * Price: [0-9]+(\\.[0-9][0-9]?)?
- * Number: [0-9]{8,}
- */

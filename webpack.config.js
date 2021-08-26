@@ -2,14 +2,24 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  devtool: 'source-map',
   entry: './src/index.js',
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
   },
+  module: {
+    rules: [
+      { 
+        test: /\.css$/i,
+        use: [ 'style-loader', 'css-loader']
+      }
+    ]
+  },
+  optimization: {
+    minimize: true,
+  },
   output: {
-    library: 'MaterialUI',
+    library: 'SwecoBettyBlocks',
     libraryExport: 'default',
     libraryTarget: 'umd',
     filename: 'bundle.js',
